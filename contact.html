@@ -1,0 +1,27 @@
+<form class="contact-form" id="contactForm">
+    <div class="form-row">
+        <input type="text" name="name" placeholder="Your name" required>
+    </div>
+    <div class="form-row">
+        <input type="email" name="email" placeholder="Your email" required>
+    </div>
+    <div class="form-row">
+        <input type="text" name="phone" placeholder="Phone number" required>
+    </div>
+    <div class="form-row">
+        <select name="service" required>
+            <option value="">Select a service</option>
+            <option value="plumbing">Plumbing</option>
+            <option value="heating">Heating</option>
+            <option value="gas">Gas</option>
+            <option value="maintenance">Maintenance</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <textarea name="message" rows="6" placeholder="Brief description of your needs" required></textarea>
+    </div>
+    <div class="form-row">
+        <button class="btn" type="submit">Send Request</button>
+    </div>
+    <p id="form-msg" class="muted"></p>
+</form>

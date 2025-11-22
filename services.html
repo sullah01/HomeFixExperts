@@ -6,6 +6,17 @@
     <title>Services --- HomeCare</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .service-card {
+            text-align: center;
+            padding: 2rem;
+        }
+    </style>
 </head>
 <body>
     <header class="site-header">
@@ -25,33 +36,29 @@
         <h1 class="page-title">Our Services</h1>
         
         <div class="services-grid">
-            <!-- Plumbing Service -->
             <article class="service-card">
-                <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Plumbing Services">
+                <span class="service-icon">🚰</span>
                 <h3>Plumbing Repairs & Installation</h3>
                 <p>Professional plumbing repairs, drain clearing and new installations with certified technicians.</p>
                 <a class="btn" href="service-plumbing.html">View Details</a>
             </article>
 
-            <!-- Heating Service -->
             <article class="service-card">
-                <img src="https://images.unsplash.com/photo-1580522154071-c6ca47a4ad5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Heating Services">
+                <span class="service-icon">🔥</span>
                 <h3>Heating & Boiler Services</h3>
                 <p>Heating system servicing, boiler repair and annual safety checks to keep you warm.</p>
                 <a class="btn" href="service-heating.html">View Details</a>
             </article>
 
-            <!-- Gas Service -->
             <article class="service-card">
-                <img src="https://images.unsplash.com/photo-1600891964097-9c9a0b7db1a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Gas Services">
+                <span class="service-icon">⛽</span>
                 <h3>Gas Safety & Installations</h3>
                 <p>Certified gas engineers for safe installations and emergency repairs with full certification.</p>
                 <a class="btn" href="service-gas.html">View Details</a>
             </article>
 
-            <!-- Maintenance Service -->
             <article class="service-card">
-                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Maintenance Services">
+                <span class="service-icon">🔧</span>
                 <h3>Preventative Maintenance</h3>
                 <p>Routine maintenance plans to keep systems running efficiently and prevent costly repairs.</p>
                 <a class="btn" href="service-maintenance.html">View Details</a>
@@ -76,11 +83,8 @@
 
     <script>
         document.getElementById('year2').textContent = new Date().getFullYear();
-        
-        // Mobile navigation toggle
         document.querySelector('.nav-toggle').addEventListener('click', function() {
-            const nav = document.querySelector('.main-nav');
-            nav.classList.toggle('active');
+            document.querySelector('.main-nav').classList.toggle('active');
         });
     </script>
 </body>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Heating Services — HomeCare</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">HomeCare</a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="btn btn-outline">Contact</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Open navigation">☰</button>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <article class="service-detail">
+      <div class="service-hero">
+        <img src="https://source.unsplash.com/1600x900/?heater,boiler" alt="Heating hero">
+        <div class="service-hero-copy">
+          <h1>Heating & Boiler Services</h1>
+          <p class="lead">Boiler repairs, servicing and system optimization to keep your home warm.</p>
+          <a class="btn" href="contact.html">Book a Visit</a>
+        </div>
+      </div>
+
+      <section class="service-content">
+        <h2>Service overview</h2>
+        <p class="dropcap">We offer comprehensive heating services including emergency repairs, annual servicing and energy-saving advice to help reduce bills.</p>
+
+        <h3>What we cover</h3>
+        <ul>
+          <li>Boiler repairs & replacement</li>
+          <li>System balancing</li>
+          <li>Smart thermostat installation</li>
+        </ul>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <h4>HomeCare Services</h4>
+        <p>Reliable plumbing, heating &amp; gas services for your home.</p>
+      </div>
+      <nav>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <div class="copyright">&copy; <span id="year4"></span> HomeCare Services</div>
+  </footer>
+  <script>document.getElementById('year4').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -11,14 +11,14 @@ document.addEventListener("DOMContentLoaded", function () {
             id: 'service-heating',
             title: 'Heating & Boiler Services',
             desc: 'Boiler repairs, servicing and system optimisation to keep you warm and efficient.',
-            image: 'https://images.unsplash.com/photo-1580522154071-c6ca47a4ad5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+            image: 'https://images.unsplash.com/photo-1711037868000-ea0c38991aef?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
             url: 'service-heating.html'
         },
         {
             id: 'service-gas',
             title: 'Gas Safety & Installations',
             desc: 'Certified gas engineers for safe installations, inspections and repairs.',
-            image: 'https://images.unsplash.com/photo-1600891964097-9c9a0b7db1a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+            image: 'https://images.unsplash.com/photo-1744302570337-a9840df6e723?q=80&w=1173&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
             url: 'service-gas.html'
         },
         {

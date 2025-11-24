@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
             id: 'service-electrical',
             title: 'Electrical Services',
             desc: 'Certified electrical installations, repairs, and safety inspections for all your home and business electrical needs.',
-            image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+            image: 'https://plus.unsplash.com/premium_photo-1664297981377-b45697cc416f?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
             url: 'service-electrical.html'
         },
         {

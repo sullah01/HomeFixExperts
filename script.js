@@ -1,6 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
     const services = [
         {
+            id: 'service-plumbing',
+            title: 'Professional Plumbing Services',
+            desc: 'Complete plumbing solutions including emergency repairs, installations, and maintenance for residential and commercial properties.',
+            image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+            url: 'service-plumbing.html'
+        },
+        {
+            id: 'service-electrical',
+            title: 'Electrical Services',
+            desc: 'Certified electrical installations, repairs, and safety inspections for all your home and business electrical needs.',
+            image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+            url: 'service-electrical.html'
+        },
+        {
             id: 'service-heating',
             title: 'Heating & Boiler Services',
             desc: 'Boiler repairs, servicing and system optimisation to keep you warm and efficient.',
@@ -8,25 +22,11 @@ document.addEventListener("DOMContentLoaded", function () {
             url: 'service-heating.html'
         },
         {
-            id: 'service-plumbing',
-            title: 'Plumbing Repairs & Installation',
-            desc: 'Fast repairs, leaks, bathroom installs and drain clearing by certified plumbers.',
-            image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
-            url: 'service-plumbing.html'
-        },
-                {
             id: 'service-gas',
             title: 'Gas Safety & Installations',
             desc: 'Certified gas engineers for safe installations, inspections and repairs.',
             image: 'https://images.unsplash.com/photo-1744302570337-a9840df6e723?q=80&w=1173&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
             url: 'service-gas.html'
-        },
-        {
-            id: 'service-maintenance',
-            title: 'Preventative Maintenance',
-            desc: 'Routine maintenance plans to preserve and extend the lifetime of home systems.',
-            image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
-            url: 'service-maintenance.html'
         }
     ];
 
@@ -106,10 +106,10 @@ document.addEventListener("DOMContentLoaded", function () {
             excerpt: 'Discover practical ways to lower your heating costs while staying warm this winter season.'
         },
         {
-            title: 'Top 5 Signs Your Boiler Needs Service',
-            src: 'Maintenance',
+            title: 'Top 5 Signs Your Electrical System Needs Service',
+            src: 'Electrical Safety',
             url: '#',
-            excerpt: 'Learn the warning signs that indicate your boiler requires professional attention.'
+            excerpt: 'Learn the warning signs that indicate your electrical system requires professional attention.'
         },
         {
             title: 'Prevent Small Leaks from Becoming Expensive',

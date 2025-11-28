@@ -30,10 +30,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     ];
 
-        // Slider injection with real images
+            // Slider injection with real images
     const slider = document.getElementById('slider');
     let currentSlide = 0;
-    let slides = []; // Make slides accessible globally
 
     if (slider) {
         services.forEach((s, idx) => {
@@ -45,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="slide-copy">
                     <h2>${s.title}</h2>
                     <p>${s.desc}</p>
-                    <button class="btn view-details-btn" data-service-index="${idx}">View Details</button>
+                    <button class="btn view-details-btn">View Details</button>
                 </div>
                 <div class="real-image-bg ${s.id.replace('service-', '')}-image">
                     <img src="${s.image}" alt="${s.title}" loading="lazy">
@@ -54,15 +53,13 @@ document.addEventListener("DOMContentLoaded", function () {
             slider.appendChild(slide);
         });
 
-        slides = Array.from(document.querySelectorAll('.slide'));
+        const slides = Array.from(document.querySelectorAll('.slide'));
         
-        // Add click handler for View Details buttons
-        document.addEventListener('click', function(e) {
+        // Add single click handler for all View Details buttons
+        slider.addEventListener('click', function(e) {
             if (e.target.classList.contains('view-details-btn')) {
-                const serviceIndex = parseInt(e.target.getAttribute('data-service-index'));
-                const serviceUrl = services[serviceIndex].url;
+                const serviceUrl = services[currentSlide].url;
                 window.location.href = serviceUrl;
-                return;
             }
         });
         
@@ -87,7 +84,6 @@ document.addEventListener("DOMContentLoaded", function () {
             setInterval(() => showSlide(currentSlide + 1), 5000);
         }
     }
-
     // Services preview with real images
     const servicesPreview = document.getElementById('services-preview');
     if (servicesPreview) {

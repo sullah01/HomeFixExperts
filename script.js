@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     ];
 
-                 // Slider injection with real images - FIXED VERSION
+        // Slider injection with real images - FIXED VERSION
     const slider = document.getElementById('slider');
     let currentSlide = 0;
 
@@ -38,12 +38,14 @@ document.addEventListener("DOMContentLoaded", function () {
         services.forEach((s, idx) => {
             const slide = document.createElement('div');
             slide.className = 'slide';
-            slide.style.display = idx === 0 ? 'block' : 'none'; // Use display instead of opacity
+            slide.style.opacity = idx === 0 ? '1' : '0';
+            slide.style.transform = idx === 0 ? 'translateY(0)' : 'translateY(20px)';
+            slide.style.pointerEvents = idx === 0 ? 'auto' : 'none'; // Prevent clicks on hidden slides
             slide.innerHTML = `
                 <div class="slide-copy">
                     <h2>${s.title}</h2>
                     <p>${s.desc}</p>
-                    <a class="btn" href="${s.url}">View Details</a>
+                    <button class="btn view-details-btn" data-url="${s.url}">View Details</button>
                 </div>
                 <div class="real-image-bg ${s.id.replace('service-', '')}-image">
                     <img src="${s.image}" alt="${s.title}" loading="lazy">
@@ -53,6 +55,16 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         const slides = Array.from(document.querySelectorAll('.slide'));
+        
+        // Single click handler for all buttons
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('view-details-btn')) {
+                e.preventDefault();
+                const url = e.target.getAttribute('data-url');
+                console.log('Navigating to:', url); // Debug log
+                window.location.href = url;
+            }
+        });
         
         if (document.querySelector('.slide-next')) {
             document.querySelector('.slide-next').addEventListener('click', () => showSlide(currentSlide + 1));
@@ -65,7 +77,9 @@ document.addEventListener("DOMContentLoaded", function () {
         function showSlide(n) {
             currentSlide = (n + slides.length) % slides.length;
             slides.forEach((s, i) => {
-                s.style.display = i === currentSlide ? 'block' : 'none'; // Use display instead of opacity
+                s.style.opacity = i === currentSlide ? '1' : '0';
+                s.style.transform = i === currentSlide ? 'translateY(0)' : 'translateY(20px)';
+                s.style.pointerEvents = i === currentSlide ? 'auto' : 'none'; // Only allow clicks on active slide
             });
         }
 

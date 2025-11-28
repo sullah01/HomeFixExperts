@@ -2,6 +2,7 @@
     --primary: #2E8B57; /* Sea Green - Better visibility */
     --secondary: #228B22; /* Forest Green */
     --accent: #FFFFFF; /* White */
+    --white: #FFFFFF; /* White */
     --text-light: #FFFFFF; /* Light text for dark backgrounds */
     --text-dark: #2C3E50; /* Dark text for light backgrounds */
     --background: #F8F9FA;
@@ -9,6 +10,7 @@
     --max-width: 1200px;
     --shadow: 0 8px 30px rgba(0,0,0,0.08);
     --gradient: linear-gradient(135deg, #2E8B57 0%, #228B22 100%);
+    --font-primary: 'Montserrat', Arial, sans-serif;
 }
 
 * {
@@ -119,7 +121,7 @@ body {
     text-align: center;
     border-bottom: 4px solid var(--accent-color);
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    margin-bottom: 0;
+    margin-top: 80px; /* Add this to account for fixed header */
 }
 
 .expert-text h2 {
@@ -130,7 +132,6 @@ body {
     margin: 0;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     letter-spacing: 0.5px;
-    text-transform: uppercase;
 }
 
 /* Hover effect for interactivity */
@@ -163,9 +164,9 @@ body {
 }
 /* Hero Slider - Fixed */
 .hero {
-    margin-top: 80px;
+    margin-top: 0; 
     position: relative;
-    background: #ffffff; /* White background */
+    background: #ffffff;
 }
 
 .slider {

@@ -112,7 +112,55 @@ body {
     font-size: 1.5rem;
     cursor: pointer;
 }
+/* 24/7 Heating & Boiler Experts Banner */
+.expert-banner {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    padding: 18px 0;
+    text-align: center;
+    border-bottom: 4px solid var(--accent-color);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 0;
+}
 
+.expert-text h2 {
+    color: var(--white);
+    font-family: var(--font-primary);
+    font-size: 2.1rem;
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Hover effect for interactivity */
+.expert-banner:hover {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+    transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .expert-banner {
+        padding: 15px 0;
+    }
+    
+    .expert-text h2 {
+        font-size: 1.6rem;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .expert-text h2 {
+        font-size: 1.3rem;
+        letter-spacing: 0.3px;
+    }
+    
+    .expert-banner {
+        border-bottom: 3px solid var(--accent-color);
+    }
+}
 /* Hero Slider - Fixed */
 .hero {
     margin-top: 80px;

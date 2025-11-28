@@ -1,6 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
     const services = [
         {
+            id: 'service-heating',
+            title: 'Heating & Boiler Services',
+            desc: 'Boiler repairs, servicing and system optimisation to keep you warm and efficient.',
+            image: 'https://images.unsplash.com/photo-1711037868000-ea0c38991aef?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            url: 'service-heating.html'
+        },
+        {
             id: 'service-plumbing',
             title: 'Professional Plumbing Services',
             desc: 'Complete plumbing solutions including emergency repairs, installations, and maintenance for residential and commercial properties.',
@@ -13,13 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
             desc: 'Certified electrical installations, repairs, and safety inspections for all your home and business electrical needs.',
             image: 'https://plus.unsplash.com/premium_photo-1664297981377-b45697cc416f?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
             url: 'service-electrical.html'
-        },
-        {
-            id: 'service-heating',
-            title: 'Heating & Boiler Services',
-            desc: 'Boiler repairs, servicing and system optimisation to keep you warm and efficient.',
-            image: 'https://images.unsplash.com/photo-1711037868000-ea0c38991aef?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-            url: 'service-heating.html'
         },
         {
             id: 'service-gas',

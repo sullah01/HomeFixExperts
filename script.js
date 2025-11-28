@@ -97,57 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-         // CTA Section
-        .about-cta {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .cta-content h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .cta-content p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-large {
-            padding: 1rem 2.5rem;
-            font-size: 1.1rem;
-        }
-
-        .about-cta .btn {
-            background: white;
-            color: var(--primary);
-        }
-
-        .about-cta .btn-outline {
-            background: transparent;
-            border-color: white;
-            color: white;
-        }
-
-        .about-cta .btn-outline:hover {
-            background: white;
-            color: var(--primary);
-        }
-
+        
 
     // News section
     const sampleNews = [

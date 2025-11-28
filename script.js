@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="slide-copy">
                     <h2>${s.title}</h2>
                     <p>${s.desc}</p>
-                    <button class="btn view-details-btn" onclick="window.location.href='${s.url}'">View Details</button>
+                    <a class="btn" href="${s.url}">View Details</a>
                 </div>
                 <div class="real-image-bg ${s.id.replace('service-', '')}-image">
                     <img src="${s.image}" alt="${s.title}" loading="lazy">

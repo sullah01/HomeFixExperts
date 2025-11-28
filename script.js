@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     ];
 
-             // Slider injection with real images
+                 // Slider injection with real images - FIXED VERSION
     const slider = document.getElementById('slider');
     let currentSlide = 0;
 
@@ -38,8 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
         services.forEach((s, idx) => {
             const slide = document.createElement('div');
             slide.className = 'slide';
-            slide.style.opacity = idx === 0 ? '1' : '0';
-            slide.style.transform = idx === 0 ? 'translateY(0)' : 'translateY(20px)';
+            slide.style.display = idx === 0 ? 'block' : 'none'; // Use display instead of opacity
             slide.innerHTML = `
                 <div class="slide-copy">
                     <h2>${s.title}</h2>
@@ -66,8 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
         function showSlide(n) {
             currentSlide = (n + slides.length) % slides.length;
             slides.forEach((s, i) => {
-                s.style.opacity = i === currentSlide ? '1' : '0';
-                s.style.transform = i === currentSlide ? 'translateY(0)' : 'translateY(20px)';
+                s.style.display = i === currentSlide ? 'block' : 'none'; // Use display instead of opacity
             });
         }
 

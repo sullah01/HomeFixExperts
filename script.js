@@ -29,9 +29,11 @@ document.addEventListener("DOMContentLoaded", function () {
             url: 'service-gas.html'
         }
     ];
-        // Slider injection with real images - DEFINITE FIX
+
+    // Slider injection with real images
     const slider = document.getElementById('slider');
     let currentSlide = 0;
+    let slideInterval;
 
     if (slider) {
         services.forEach((s, idx) => {
@@ -39,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
             slide.className = 'slide';
             slide.style.opacity = idx === 0 ? '1' : '0';
             slide.style.transform = idx === 0 ? 'translateY(0)' : 'translateY(20px)';
-            slide.style.zIndex = idx === 0 ? '2' : '1'; // Active slide gets higher z-index
+            slide.style.zIndex = idx === 0 ? '2' : '1';
             slide.innerHTML = `
                 <div class="slide-copy">
                     <h2>${s.title}</h2>
@@ -59,9 +61,8 @@ document.addEventListener("DOMContentLoaded", function () {
         slider.addEventListener('click', function(e) {
             if (e.target.classList.contains('view-details-btn')) {
                 e.preventDefault();
-                e.stopPropagation(); // Prevent event bubbling
+                e.stopPropagation();
                 
-                // Get the active slide's button
                 const activeSlide = slides[currentSlide];
                 const activeButton = activeSlide.querySelector('.view-details-btn');
                 const url = activeButton.getAttribute('data-url');
@@ -71,28 +72,84 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
         
-        if (document.querySelector('.slide-next')) {
-            document.querySelector('.slide-next').addEventListener('click', () => showSlide(currentSlide + 1));
+        // Navigation buttons
+        const nextBtn = document.querySelector('.slide-next');
+        const prevBtn = document.querySelector('.slide-prev');
+        
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
         }
         
-        if (document.querySelector('.slide-prev')) {
-            document.querySelector('.slide-prev').addEventListener('click', () => showSlide(currentSlide - 1));
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
         }
 
         function showSlide(n) {
+            // Clear existing interval
+            if (slideInterval) {
+                clearInterval(slideInterval);
+            }
+            
             currentSlide = (n + slides.length) % slides.length;
             slides.forEach((s, i) => {
                 s.style.opacity = i === currentSlide ? '1' : '0';
                 s.style.transform = i === currentSlide ? 'translateY(0)' : 'translateY(20px)';
-                s.style.zIndex = i === currentSlide ? '2' : '1'; // Update z-index
+                s.style.zIndex = i === currentSlide ? '2' : '1';
             });
+            
+            // Restart auto-slide
+            startAutoSlide();
         }
 
-        // Auto-slide every 5 seconds
-        if (slides.length > 1) {
-            setInterval(() => showSlide(currentSlide + 1), 5000);
+        function startAutoSlide() {
+            if (slides.length > 1) {
+                slideInterval = setInterval(() => showSlide(currentSlide + 1), 5000);
+            }
+        }
+
+        // Start auto-slide
+        startAutoSlide();
+
+        // Pause auto-slide on hover/touch
+        slider.addEventListener('mouseenter', () => {
+            if (slideInterval) {
+                clearInterval(slideInterval);
+            }
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            startAutoSlide();
+        });
+
+        // Touch support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        slider.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        slider.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // Swipe left - next
+                    showSlide(currentSlide + 1);
+                } else {
+                    // Swipe right - previous
+                    showSlide(currentSlide - 1);
+                }
+            }
         }
     }
+
     // Services preview with real images
     const servicesPreview = document.getElementById('services-preview');
     if (servicesPreview) {
@@ -112,8 +169,6 @@ document.addEventListener("DOMContentLoaded", function () {
             servicesPreview.appendChild(block);
         });
     }
-
-        
 
     // News section
     const sampleNews = [
@@ -168,11 +223,28 @@ document.addEventListener("DOMContentLoaded", function () {
     // Mobile nav toggle
     const navToggle = document.querySelector('.nav-toggle');
     if (navToggle) {
-        navToggle.addEventListener('click', () => {
+        navToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
             const nav = document.querySelector('.main-nav');
             nav.classList.toggle('active');
         });
     }
+
+    // Close menu when clicking on links
+    document.querySelectorAll('.main-nav a').forEach(link => {
+        link.addEventListener('click', function() {
+            document.querySelector('.main-nav').classList.remove('active');
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const nav = document.querySelector('.main-nav');
+        const toggle = document.querySelector('.nav-toggle');
+        if (nav.classList.contains('active') && !nav.contains(event.target) && !toggle.contains(event.target)) {
+            nav.classList.remove('active');
+        }
+    });
 
     // Set current year in footer
     const yearElements = document.querySelectorAll('[id^="year"]');
@@ -207,16 +279,75 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(response => response.json())
             .then(data => {
                 const msg = document.getElementById('form-msg');
-                msg.textContent = 'Thank you! Your message has been sent successfully.';
-                msg.style.color = '#2E8B57';
+                if (msg) {
+                    msg.textContent = 'Thank you! Your message has been sent successfully.';
+                    msg.style.color = '#2E8B57';
+                }
                 contactForm.reset();
             })
             .catch(error => {
                 const msg = document.getElementById('form-msg');
-                msg.textContent = 'Sorry, there was an error sending your message. Please try again.';
-                msg.style.color = '#e74c3c';
+                if (msg) {
+                    msg.textContent = 'Sorry, there was an error sending your message. Please try again.';
+                    msg.style.color = '#e74c3c';
+                }
             });
         });
     }
-});
 
+    // Enhanced mobile experience
+    function enhanceMobileExperience() {
+        // Improve touch targets for mobile
+        if ('ontouchstart' in window) {
+            document.documentElement.classList.add('touch-device');
+            
+            const touchElements = document.querySelectorAll('a, button, .btn, .service-card');
+            touchElements.forEach(el => {
+                if (el.offsetWidth < 44 || el.offsetHeight < 44) {
+                    el.style.minHeight = '44px';
+                    el.style.minWidth = '44px';
+                }
+            });
+        }
+
+        // Prevent zoom on input focus for iOS
+        const inputs = document.querySelectorAll('input, select, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                if (window.innerWidth <= 768) {
+                    this.style.fontSize = '16px';
+                }
+            });
+        });
+
+        // Handle viewport height on mobile
+        function setViewportHeight() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+
+        setViewportHeight();
+        window.addEventListener('resize', setViewportHeight);
+        window.addEventListener('orientationchange', setViewportHeight);
+    }
+
+    enhanceMobileExperience();
+
+    // Lazy loading for images
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+});

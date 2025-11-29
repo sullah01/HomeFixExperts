@@ -3,9 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Gas Services — HomeCare</title>
+  <title>Gas Safety & Installations — 24/7 HomeFix Experts | Gas Safe Registered</title>
+  <meta name="description" content="Gas Safe registered engineers for all your gas installation, repair and safety certificate needs. 24/7 emergency gas services available.">
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <header class="site-header">
@@ -24,7 +26,7 @@
   <main class="container main-content">
     <article class="service-detail">
       <div class="service-hero">
-        <img src="https://images.unsplash.com/photo-1744302570337-a9840df6e723?q=80&w=1173&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gas Services">
+        <img src="https://images.unsplash.com/photo-1744302570337-a9840df6e723?q=80&w=1173&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gas Services" loading="lazy">
         <div class="service-hero-copy">
           <h1>Gas Safety & Installations</h1>
           <p class="lead">Certified engineers for gas installations, testing and safety inspections.</p>
@@ -33,14 +35,50 @@
       </div>
 
       <section class="service-content">
-        <h2>Safety first</h2>
-        <p class="dropcap">All gas works are completed by qualified personnel and include safety certificates where required.</p>
-        <h3>Included checks</h3>
+        <h2>Gas Safety First</h2>
+        <p class="dropcap">All gas works are completed by qualified Gas Safe registered personnel and include safety certificates where required. Your safety is our top priority when it comes to gas appliances and installations.</p>
+
+        <h3>Our Gas Services Include:</h3>
         <ul>
-          <li>Leak detection & repair</li>
-          <li>Safety certification</li>
-          <li>Appliance installation</li>
+          <li><strong>Gas Safety Certificates (CP12):</strong> Mandatory for landlords and essential for homeowner peace of mind</li>
+          <li><strong>Gas Appliance Installation:</strong> Professional installation of cookers, fires, and heaters</li>
+          <li><strong>Gas Leak Detection & Repair:</strong> Emergency response for gas leaks and repairs</li>
+          <li><strong>Gas Boiler Installation:</strong> New boiler installations and replacements</li>
+          <li><strong>Gas Pipe Work:</strong> Installation and repair of gas pipe systems</li>
+          <li><strong>Gas Appliance Servicing:</strong> Annual servicing of gas appliances for safety and efficiency</li>
+          <li><strong>Gas Fire Installation:</strong> Professional installation of gas fires and surrounds</li>
+          <li><strong>Gas Cooker Installation:</strong> Safe installation and connection of gas cookers</li>
+          <li><strong>Emergency Gas Repairs:</strong> 24/7 emergency call-out for gas-related issues</li>
         </ul>
+
+        <h3>Gas Safe Registered</h3>
+        <p>All our gas engineers are <strong>Gas Safe registered</strong>, which is a legal requirement for anyone working with gas appliances. We ensure all work complies with current gas safety regulations.</p>
+
+        <div class="emergency-banner" style="background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 1.5rem; border-radius: 10px; margin: 2rem 0; text-align: center;">
+          <div style="display: flex; align-items: center; gap: 1rem; flex-direction: column;">
+            <div style="font-size: 2rem;">
+              <i class="fas fa-gas-pump"></i>
+            </div>
+            <div>
+              <h4 style="margin: 0 0 0.5rem 0; font-size: 1.3rem;">Gas Emergency? Act Fast!</h4>
+              <p style="margin: 0 0 1rem 0; opacity: 0.9;">If you smell gas or suspect a leak, call us immediately. Do not wait.</p>
+              <a href="tel:+447447997440" class="btn" style="background: white; color: #e74c3c; padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem;">
+                <i class="fas fa-phone"></i>
+                Gas Emergency: +44 7447 997440
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: #fff3cd; border: 1px solid #ffeaa7; border-radius: 8px; padding: 1.5rem; margin: 2rem 0;">
+          <h4 style="color: #856404; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fas fa-exclamation-triangle"></i>
+            Important Gas Safety Notice
+          </h4>
+          <p style="color: #856404; margin: 0; line-height: 1.5;">
+            If you smell gas or suspect a leak: Turn off the gas at the meter, open windows, extinguish all flames, do not operate electrical switches, and call us immediately. Your safety is our priority.
+          </p>
+        </div>
       </section>
     </article>
   </main>
@@ -57,9 +95,37 @@
         <a href="contact.html">Contact</a>
       </nav>
     </div>
-    <div class="copyright">&copy; <span id="year5"></span> HomeCare Services</div>
+    <div class="copyright">&copy; <span id="year5"></span> HomeFix Experts</div>
   </footer>
-  <script>document.getElementById('year5').textContent = new Date().getFullYear();</script>
-  <script src="js/logo-manager.js"></script>
+
+  <script>
+    document.getElementById('year5').textContent = new Date().getFullYear();
+    
+    // Mobile navigation
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+      document.querySelector('.main-nav').classList.toggle('active');
+    });
+
+    // Close menu when clicking on links
+    document.querySelectorAll('.main-nav a').forEach(link => {
+      link.addEventListener('click', function() {
+        document.querySelector('.main-nav').classList.remove('active');
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const nav = document.querySelector('.main-nav');
+      const toggle = document.querySelector('.nav-toggle');
+      if (nav.classList.contains('active') && !nav.contains(event.target) && !toggle.contains(event.target)) {
+        nav.classList.remove('active');
+      }
+    });
+
+    // Enhance touch experience
+    if ('ontouchstart' in window) {
+      document.documentElement.classList.add('touch-device');
+    }
+  </script>
 </body>
 </html>

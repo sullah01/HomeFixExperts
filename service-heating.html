@@ -3,9 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Heating Services — HomeCare</title>
+  <title>Heating & Boiler Services — 24/7 HomeFix Experts | Gas Safe Registered</title>
+  <meta name="description" content="24/7 emergency heating and boiler services from Gas Safe registered engineers. Boiler repairs, installations and landlord safety certificates.">
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <header class="site-header">
@@ -24,7 +26,7 @@
   <main class="container main-content">
     <article class="service-detail">
       <div class="service-hero">
-        <img src="https://images.unsplash.com/photo-1711037868000-ea0c38991aef?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Heating Hero">
+        <img src="https://images.unsplash.com/photo-1711037868000-ea0c38991aef?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Heating Services" loading="lazy">
         <div class="service-hero-copy">
           <h1>Heating & Boiler Services</h1>
           <p class="lead">Boiler repairs, servicing and system optimization to keep your home warm.</p>
@@ -33,18 +35,39 @@
       </div>
 
       <section class="service-content">
-        <h2>Service overview</h2>
+        <h2>Professional Heating Solutions</h2>
         <p class="dropcap">When your heat goes off, you need an expert fast. The 247 HomeFix Experts team of Gas Safe registered engineers is on call round the clock for emergency repairs, installations, and servicing. We offer comprehensive heating services including emergency repairs, annual servicing and energy-saving advice to help reduce bills.</p>
 
-  <h3>What we cover</h3>
-    <ul>
-        <li><strong>Emergency Boiler Repair:</strong> Your local experts for a sudden breakdown, low pressure, or fault code. We offer all emergency diagnostics.</li>
-        <li><strong>New Boiler Installation:</strong> We recommend and install A-rated combi, system, and regular boilers.</li>
-        <li><strong>Landlord Gas Safety Certificates:</strong> Fully certified and fast-turnaround CP12 reports for your rental properties.</li>
-        <li><strong>Annual Boiler Servicing:</strong> Protect your warranty and your home with a thorough service by our experts.</li>
-        <li><strong>Power Flushing:</strong> Expert system cleaning to restore heat and efficiency.</li>
-        <li><strong>Thermostat & Controls:</strong> Upgrade to a smart thermostat (like Hive or Nest) with our professional installation service.</li>
-    </ul>
+        <h3>What We Cover</h3>
+        <ul>
+          <li><strong>Emergency Boiler Repair:</strong> Your local experts for a sudden breakdown, low pressure, or fault code. We offer all emergency diagnostics.</li>
+          <li><strong>New Boiler Installation:</strong> We recommend and install A-rated combi, system, and regular boilers.</li>
+          <li><strong>Landlord Gas Safety Certificates:</strong> Fully certified and fast-turnaround CP12 reports for your rental properties.</li>
+          <li><strong>Annual Boiler Servicing:</strong> Protect your warranty and your home with a thorough service by our experts.</li>
+          <li><strong>Power Flushing:</strong> Expert system cleaning to restore heat and efficiency.</li>
+          <li><strong>Thermostat & Controls:</strong> Upgrade to a smart thermostat (like Hive or Nest) with our professional installation service.</li>
+          <li><strong>Radiator Installation & Repairs:</strong> New radiator installations and repairs for optimal heating</li>
+          <li><strong>Underfloor Heating:</strong> Professional installation and maintenance of underfloor heating systems</li>
+        </ul>
+
+        <h3>Gas Safe Registered Engineers</h3>
+        <p>All our heating engineers are <strong>Gas Safe registered</strong>, ensuring your heating system is installed and maintained to the highest safety standards.</p>
+
+        <div class="emergency-banner" style="background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 1.5rem; border-radius: 10px; margin: 2rem 0; text-align: center;">
+          <div style="display: flex; align-items: center; gap: 1rem; flex-direction: column;">
+            <div style="font-size: 2rem;">
+              <i class="fas fa-fire"></i>
+            </div>
+            <div>
+              <h4 style="margin: 0 0 0.5rem 0; font-size: 1.3rem;">24/7 Heating Emergencies</h4>
+              <p style="margin: 0 0 1rem 0; opacity: 0.9;">No heating or hot water? Our emergency team is available 24/7 to get you warm again.</p>
+              <a href="tel:+447447997440" class="btn" style="background: white; color: #e74c3c; padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem;">
+                <i class="fas fa-phone"></i>
+                Emergency Call: +44 7447 997440
+              </a>
+            </div>
+          </div>
+        </div>
       </section>
     </article>
   </main>
@@ -61,9 +84,37 @@
         <a href="contact.html">Contact</a>
       </nav>
     </div>
-    <div class="copyright">&copy; <span id="year4"></span> HomeCare Services</div>
+    <div class="copyright">&copy; <span id="year4"></span> HomeFix Experts</div>
   </footer>
-  <script>document.getElementById('year4').textContent = new Date().getFullYear();</script>
-  <script src="js/logo-manager.js"></script>
+
+  <script>
+    document.getElementById('year4').textContent = new Date().getFullYear();
+    
+    // Mobile navigation
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+      document.querySelector('.main-nav').classList.toggle('active');
+    });
+
+    // Close menu when clicking on links
+    document.querySelectorAll('.main-nav a').forEach(link => {
+      link.addEventListener('click', function() {
+        document.querySelector('.main-nav').classList.remove('active');
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const nav = document.querySelector('.main-nav');
+      const toggle = document.querySelector('.nav-toggle');
+      if (nav.classList.contains('active') && !nav.contains(event.target) && !toggle.contains(event.target)) {
+        nav.classList.remove('active');
+      }
+    });
+
+    // Enhance touch experience
+    if ('ontouchstart' in window) {
+      document.documentElement.classList.add('touch-device');
+    }
+  </script>
 </body>
 </html>

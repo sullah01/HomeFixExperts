@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
             gap: 2rem;
             max-width: 1200px;
             margin: 0 auto;
+            width: 100%;
         }
         .nav-logo {
             flex-shrink: 0;
@@ -22,11 +23,12 @@ document.addEventListener('DOMContentLoaded', function() {
             height: 50px;
             width: auto;
             max-height: 50px !important;
+            object-fit: contain;
         }
         .main-nav {
             display: flex;
             align-items: center;
-            gap: 2rem;
+            gap: 1rem;
             flex-wrap: wrap;
             margin: 0;
             padding: 0;
@@ -37,9 +39,15 @@ document.addEventListener('DOMContentLoaded', function() {
             font-weight: 500;
             transition: color 0.3s ease;
             white-space: nowrap;
+            padding: 8px 12px;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            border-radius: 6px;
         }
         .main-nav a:hover {
             color: #2E8B57;
+            background: rgba(255,255,255,0.15);
         }
         /* Ensure header containers use flex */
         header, .header, .navbar {
@@ -54,12 +62,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 flex-direction: column;
                 text-align: center;
                 gap: 1rem;
+                padding: 0.5rem 0;
             }
             .nav-logo img {
                 height: 40px;
             }
             .main-nav {
                 justify-content: center;
+                flex-direction: column;
+                width: 100%;
+            }
+            .main-nav a {
+                width: 100%;
+                justify-content: center;
+                padding: 12px 20px;
+                min-height: 50px;
+                font-size: 1.1rem;
             }
         }
     `;
@@ -107,8 +125,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 const headerHtml = `
                     <div class="header-with-logo">
                         <div class="nav-logo">
-                            <a href="/">
-                                <img src="assets/logos/logo-primary.png" alt="24 7 Home Fix Experts">
+                            <a href="/" style="display: flex; align-items: center; min-height: 44px;">
+                                <img src="assets/logos/logo-primary.png" alt="24 7 Home Fix Experts" loading="lazy">
                             </a>
                         </div>
                         ${navHtml}
@@ -128,10 +146,10 @@ document.addEventListener('DOMContentLoaded', function() {
         footers.forEach(footer => {
             if (!footer.querySelector('.footer-logo')) {
                 const logoHtml = `
-                    <div class="footer-logo">
-                        <a href="/">
+                    <div class="footer-logo" style="text-align: center; margin-bottom: 1rem;">
+                        <a href="/" style="display: inline-flex; align-items: center; min-height: 44px;">
                             <img src="assets/logos/logo-primary.png" alt="24 7 Home Fix Experts" 
-                                 style="max-height: 40px; height: auto; opacity: 0.8;">
+                                 style="max-height: 40px; height: auto; opacity: 0.8; object-fit: contain;" loading="lazy">
                         </a>
                     </div>
                 `;
@@ -171,4 +189,25 @@ document.addEventListener('DOMContentLoaded', function() {
     setupLogoContrast();
     
     console.log('Logo Manager initialized successfully');
+
+    // Add mobile navigation handling
+    const navToggle = document.querySelector('.nav-toggle');
+    if (navToggle) {
+        navToggle.addEventListener('click', function() {
+            const nav = document.querySelector('.main-nav');
+            if (nav) {
+                nav.classList.toggle('active');
+            }
+        });
+    }
+
+    // Close menu when clicking on links (mobile)
+    document.addEventListener('click', function(event) {
+        if (event.target.matches('.main-nav a')) {
+            const nav = document.querySelector('.main-nav');
+            if (nav && window.innerWidth <= 768) {
+                nav.classList.remove('active');
+            }
+        }
+    });
 });

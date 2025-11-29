@@ -805,3 +805,45 @@ body {
         height: 60px !important;
     }
 }
+/* Logo Styles */
+.logo {
+    max-height: 60px;
+    transition: all 0.3s ease;
+}
+
+.logo-small {
+    max-height: 40px;
+}
+
+.logo-large {
+    max-height: 80px;
+}
+
+.logo-footer {
+    max-height: 50px;
+    opacity: 0.8;
+}
+
+/* Header with logo */
+.header-with-logo {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    background: transparent;
+}
+
+/* Logo in navigation */
+.nav-logo {
+    margin-right: auto;
+}
+
+/* Responsive logo */
+@media (max-width: 768px) {
+    .logo {
+        max-height: 50px;
+    }
+    
+    .logo-large {
+        max-height: 60px;
+    }
+}

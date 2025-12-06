@@ -11,6 +11,7 @@
     --shadow: 0 8px 30px rgba(0,0,0,0.08);
     --gradient: linear-gradient(135deg, #2E8B57 0%, #228B22 100%);
     --font-primary: 'Montserrat', Arial, sans-serif;
+    --light: #eff7f3; /* Grey*/
 }
 
 * {
@@ -159,7 +160,7 @@ body {
 
 /* 24/7 Heating & Boiler Experts Banner */
 .expert-banner {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    background: linear-gradient(135deg, var(--light) 0%, var(--secondary) 100%);
     padding: 18px 0;
     text-align: center;
     border-bottom: 4px solid var(--accent);
@@ -168,7 +169,7 @@ body {
 }
 
 .expert-text h2 {
-    color: var(--white);
+    color: var(--secondary);
     font-family: var(--font-primary);
     font-size: 1.8rem;
     font-weight: 700;

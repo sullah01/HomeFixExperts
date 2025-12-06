@@ -1191,3 +1191,61 @@ body {
         transform: none;
     }
 }
+/* ===== NAVIGATION LOGO STYLING ===== */
+.logo-link {
+    float: left;
+    margin-right: 20px;
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-logo {
+    height: 40px; /* Default height for desktop */
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+/* Responsive adjustments for tablet */
+@media screen and (max-width: 900px) {
+    .nav-logo {
+        height: 35px;
+    }
+}
+
+/* Responsive adjustments for mobile */
+@media screen and (max-width: 768px) {
+    .nav-logo {
+        height: 30px;
+        margin-left: 10px;
+    }
+    
+    .logo-link {
+        margin-right: 15px;
+    }
+}
+
+/* Very small screens */
+@media screen and (max-width: 480px) {
+    .nav-logo {
+        height: 25px;
+    }
+}
+
+/* Ensure the navigation bar can accommodate the logo */
+nav {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 10px 0;
+}
+
+/* Adjust the spacing of other nav items */
+nav a:not(.logo-link), .dropdown {
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    height: 50px; /* Match logo container height */
+}

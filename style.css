@@ -47,6 +47,7 @@ body {
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 20px rgba(46, 139, 87, 0.2);
+    margin-bottom: 0;
 }
 
 .header-inner {
@@ -163,7 +164,7 @@ body {
     text-align: center;
     border-bottom: 4px solid var(--accent);
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    margin-top: 80px; /* Add this to account for fixed header */
+    margin-top: 0;
 }
 
 .expert-text h2 {

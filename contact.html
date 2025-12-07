@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="location-styles.css">
 </head>
 <body>
   <header class="site-header">
@@ -55,7 +56,8 @@
                         </div>
                         <div class="contact-details">
                             <h4>Call Us</h4>
-                            <p>+44 7447 997440</p>
+                            <p><a href="tel:08001234567" class="dynamic-phone">0800 123 4567</a></p>
+                            <p><small><span class="location-badge"></span></small></p>
                             <span class="contact-note">24/7 Emergency Line</span>
                         </div>
                     </div>
@@ -125,6 +127,13 @@
                         <span>NICEIC Certified</span>
                     </div>
                 </div>
+                 <h4>Service Areas:</h4>
+                 <ul>
+                    <li>Nottingham: <a href="tel:01151234567">0115 123 4567</a></li>
+                    <li>Derby: <a href="tel:01332123456">01332 123 456</a></li>
+                    <li>Mansfield: <a href="tel:01623123456">01623 123 456</a></li>
+                    <li>Leicester: <a href="tel:01161234567">0116 123 4567</a></li>
+                </ul>
             </div>
 
             <!-- Contact Form -->
@@ -505,5 +514,6 @@
             font-size: 16px; /* Prevents zoom on iOS */
         }
     </style>
+    <script src="location-number.js"></script>
 </body>
 </html>

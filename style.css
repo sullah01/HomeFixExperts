@@ -44,7 +44,7 @@ body {
 .site-header {
     background: var(--gradient);
     padding: 10px 20px;
-    position: relative;
+    position: fixed !important;
     width: 100%;
     top: 0;
     left: 0;

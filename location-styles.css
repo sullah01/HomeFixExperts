@@ -1,0 +1,25 @@
+/* location-styles.css */
+.location-badge {
+    display: none;
+    background: #4CAF50;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 0.9em;
+    margin-left: 10px;
+    animation: fadeIn 0.5s;
+}
+
+.dynamic-phone {
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.dynamic-phone:hover {
+    color: #4CAF50;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

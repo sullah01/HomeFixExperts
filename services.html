@@ -4,45 +4,45 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Services - HomeFix Experts | Heating, Plumbing, Electrical & Gas Services</title>
-     <!-- Favicon -->
+    <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><circle cx='8' cy='8' r='7' fill='%23228B22'/><text x='8' y='11' font-family='Arial, sans-serif' font-size='8' fill='%23fff' text-anchor='middle' font-weight='bold'>24</text></svg>">
-    <!-- Facivon ends -->
+    <!-- Favicon ends -->
     <meta name="description" content="Professional heating, plumbing, electrical and gas services from certified experts. 24/7 emergency services available.">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-   <header class="site-header">
-    <div class="header-container">
-      <a class="brand" href="index.html">24/7 HomeFix Experts</a>
-        <!-- LOGO begins -->
-        <!-- Logo on the left -->
-        <div class="logo-container">
-        <a href="index.html" class="logo-link">
-        <img src="assets/logos/logo-light.png" alt="24HOME FIXEXPERTS Logo" class="nav-logo">
-    </a>
+    <header class="site-header">
+        <div class="header-container">
+            <a class="brand" href="index.html">24/7 HomeFix Experts</a>
+            <!-- LOGO begins -->
+            <div class="logo-container">
+                <a href="index.html" class="logo-link">
+                    <img src="assets/logos/logo-light.png" alt="24HOME FIXEXPERTS Logo" class="nav-logo">
+                </a>
+            </div>
+            <!-- LOGO ends -->
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="about.html">About</a>
+                <a href="contact.html" class="btn btn-outline">Contact</a>
+            </nav>
+            <button class="nav-toggle" aria-label="Open navigation">☰</button>
         </div>
-        <!-- LOGO ends -->
-       <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="about.html">About</a>
-        <a href="contact.html" class="btn btn-outline">Contact</a>
-      </nav>
-      <button class="nav-toggle" aria-label="Open navigation">☰</button>
-    </div>
-  </header>  
+    </header>
 
     <main class="container main-content">
-        <h1 class="page-title" style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--primary); text-align: center; margin: 100px 0 2rem 0;">Our Services</h1>
-        <p style="text-align: center; font-size: 1.1rem; color: var(--text-dark); opacity: 0.8; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">Professional, reliable home services from certified experts. Available 24/7 for emergencies.</p>
+        <h1 class="section-title">Our Services</h1>
+        <p class="services-intro">Professional, reliable home services from certified experts. Available 24/7 for emergencies.</p>
         
         <div class="services-grid">
             <!-- Heating Service -->
             <article class="service-card">
                 <img src="https://images.unsplash.com/photo-1711037868000-ea0c38991aef?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Heating Services" loading="lazy">
                 <h3>Heating & Boiler Services</h3>
-                <p>Heating system servicing, boiler repair and annual safety checks to keep you warm. </p>
+                <p>Heating system servicing, boiler repair and annual safety checks to keep you warm.</p>
                 <a class="btn" href="service-heating.html">View Details</a>
             </article>
             
@@ -72,12 +72,14 @@
         </div>
 
         <!-- Emergency CTA -->
-        <section style="background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 3rem 2rem; border-radius: 20px; text-align: center; margin-top: 4rem;">
-            <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 1rem;">24/7 Emergency Services</h2>
-            <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9;">Don't wait for business hours. We're available round the clock for urgent heating, plumbing, electrical and gas emergencies.</p>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="tel:+447447997440" class="btn" style="background: #e74c3c; color: white; padding: 15px 30px; font-size: 1.1rem; min-height: 50px;">Emergency Call</a>
-                <a href="contact.html" class="btn" style="background: transparent; color: white; border: 2px solid white; padding: 15px 30px; font-size: 1.1rem; min-height: 50px;">Schedule Service</a>
+        <section class="emergency-cta">
+            <div class="emergency-content">
+                <h2>24/7 Emergency Services</h2>
+                <p>Don't wait for business hours. We're available round the clock for urgent heating, plumbing, electrical and gas emergencies.</p>
+                <div class="emergency-buttons">
+                    <a href="tel:08001234567" class="btn emergency-btn">Emergency Call</a>
+                    <a href="contact.html" class="btn schedule-btn">Schedule Service</a>
+                </div>
             </div>
         </section>
     </main>
@@ -122,5 +124,119 @@
             }
         });
     </script>
+
+    <style>
+        /* Services Page Specific Styles */
+        .services-intro {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            opacity: 0.8;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .emergency-cta {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 4rem;
+            box-shadow: var(--shadow);
+        }
+
+        .emergency-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .emergency-content p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .emergency-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .emergency-btn {
+            background: #e74c3c;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            min-height: 50px;
+        }
+
+        .schedule-btn {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            min-height: 50px;
+        }
+
+        .emergency-btn:hover,
+        .schedule-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .emergency-cta {
+                padding: 2rem 1.5rem;
+                margin-top: 3rem;
+            }
+
+            .emergency-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .emergency-content p {
+                font-size: 1rem;
+            }
+
+            .emergency-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .emergency-btn,
+            .schedule-btn {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .emergency-cta {
+                padding: 1.5rem 1rem;
+                margin-top: 2rem;
+            }
+
+            .emergency-content h2 {
+                font-size: 1.6rem;
+            }
+
+            .services-intro {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
 </body>
 </html>

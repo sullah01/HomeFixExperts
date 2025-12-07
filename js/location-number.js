@@ -13,7 +13,7 @@ const locationCities = {
     'leicester': 'Leicester'
 };
 
-const defaultNumber = '0800 123 4567';
+const defaultNumber = '01157722796';
 const defaultCity = 'National Helpline';
 
 async function detectLocation() {

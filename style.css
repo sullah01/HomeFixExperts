@@ -31,6 +31,7 @@ body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+    padding-top: 70px !important; /* Adjust this based on your header height */
 }
 
 .container {
@@ -46,9 +47,11 @@ body {
     position: relative;
     width: 100%;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
     box-shadow: 0 2px 20px rgba(46, 139, 87, 0.2);
-    margin-bottom: 0;
+    margin: 0 !important;
 }
 
 .header-inner {

@@ -1,4 +1,63 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // ==================== MOBILE MENU FIX ====================
+    // Universal Mobile Menu Script - Single source of truth
+    const navToggle = document.querySelector('.nav-toggle');
+    const mainNav = document.querySelector('.main-nav');
+    
+    if (navToggle && mainNav) {
+        // Make sure menu starts closed
+        mainNav.classList.remove('active');
+        navToggle.innerHTML = '☰';
+        navToggle.setAttribute('aria-label', 'Open navigation');
+        
+        // Toggle menu on hamburger click
+        navToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            mainNav.classList.toggle('active');
+            
+            // Update button icon
+            if (mainNav.classList.contains('active')) {
+                this.innerHTML = '✕';
+                this.setAttribute('aria-label', 'Close navigation');
+            } else {
+                this.innerHTML = '☰';
+                this.setAttribute('aria-label', 'Open navigation');
+            }
+        });
+        
+        // Close menu when clicking links
+        document.querySelectorAll('.main-nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                mainNav.classList.remove('active');
+                navToggle.innerHTML = '☰';
+                navToggle.setAttribute('aria-label', 'Open navigation');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (mainNav.classList.contains('active') && 
+                !mainNav.contains(event.target) && 
+                !navToggle.contains(event.target)) {
+                mainNav.classList.remove('active');
+                navToggle.innerHTML = '☰';
+                navToggle.setAttribute('aria-label', 'Open navigation');
+            }
+        });
+        
+        // Close menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mainNav.classList.contains('active')) {
+                mainNav.classList.remove('active');
+                navToggle.innerHTML = '☰';
+                navToggle.setAttribute('aria-label', 'Open navigation');
+            }
+        });
+    }
+    
+    // ==================== ORIGINAL SCRIPT CONTENT ====================
     const services = [
         {
             id: 'service-heating',
@@ -219,32 +278,6 @@ document.addEventListener("DOMContentLoaded", function () {
             newsList.appendChild(item);
         });
     }
-
-    // Mobile nav toggle
-    const navToggle = document.querySelector('.nav-toggle');
-    if (navToggle) {
-        navToggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const nav = document.querySelector('.main-nav');
-            nav.classList.toggle('active');
-        });
-    }
-
-    // Close menu when clicking on links
-    document.querySelectorAll('.main-nav a').forEach(link => {
-        link.addEventListener('click', function() {
-            document.querySelector('.main-nav').classList.remove('active');
-        });
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', function(event) {
-        const nav = document.querySelector('.main-nav');
-        const toggle = document.querySelector('.nav-toggle');
-        if (nav.classList.contains('active') && !nav.contains(event.target) && !toggle.contains(event.target)) {
-            nav.classList.remove('active');
-        }
-    });
 
     // Set current year in footer
     const yearElements = document.querySelectorAll('[id^="year"]');
